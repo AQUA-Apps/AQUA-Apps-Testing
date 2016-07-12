@@ -1,0 +1,108 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #000000;
+}
+.page-section {
+    padding: 0 64px !important;
+    padding-bottom: 32px !important;
+}
+.no-padding { padding: 0 0 !important; }
+.no-margin { margin: 0 0 !important; }
+.nodrag {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.blue-background { background-color:#2196F3; }
+
+/* ******************** Promo ******************** */
+.promo-section {
+    padding-top: 64px;
+    background-color: #000000;
+    height: 100%;
+}
+.promo-logo {
+    display: block;
+    margin: auto;
+    width: 75%;
+    max-width: 640px !important;
+}
+.dev-btn { width: 300px; }
+.dev-btns { margin-top: 32px; }
+.btn-down {
+    position: relative;
+    bottom: 0px;
+}
+
+/* ******************** Toolbar ******************** */
+.toolbar-logo {
+    width: 42px;
+    height: 42px;
+    margin-right: 16px;
+}
+.toolbar-name { text-decoration: none; }
+.toolbar-name:focus, .toolbar-name:hover, .toolbar-name:active { color: #FFFFFF !important; }
+
+/* ******************** Apps ******************** */
+.app-icon {
+    width: 200px !important;
+    height: auto;
+    margin-bottom: 32px;
+}
+.app-name { font-size: 48px; text-align: center; }
+.app-info { padding: 16px 196px 48px 196px; }
+.app-desc { font-size: 20px; }
+.app-legal { font-size: 14px; }
+.legal-sup { font-size: 12px; }
+.app-desc, .app-legal {
+    text-align: justify;
+    text-justify: auto;
+}
+.google-badge, .amazon-badge {
+    width: auto;
+    height: 66px;
+    margin: 8px 16px;
+}
+
+/* ******************** Social ******************** */
+md-tooltip.md-content { background-color: #000000; }
+.section-social { padding: 48px 0; }
+.social-icons { margin-top: 24px; }
+.btn-social { margin-top: -2px !important; }
+#mc-embedded-subscribe { background-color: #333333 !important; }
+#mc-embedded-subscribe:focus, #mc-embedded-subscribe:hover { background-color: #555555 !important; }
+#mc_embed_signup { margin: 0 64px; }
+
+/* ******************** Footer ******************** */
+.footer {
+    padding: 16px 54px;
+    background-color: #444444;
+    color: #FFFFFF;
+}
+.copyright a {
+    margin: 0 16px;
+    color: #AAAAAA;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+.copyright a:hover { color: #2196F3; }
+.copyright a:active { color: #1565C0; }
+.legal-trademarks {
+    margin: 12px 16px;
+    font-size: 12px;
+}
+.copyright .md-button {
+    padding: 0px 8px;
+    font-size: 12px;
+}
+
+/* ******************** Mobile ******************** */
+@media (max-width: 960px) {
+    .app-info { padding: 12px 48px 24px 48px; }
+    .app-name { font-size: 36px; }
+    .app-icon { width: 128px !important; }
+}
