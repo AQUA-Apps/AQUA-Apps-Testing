@@ -71,7 +71,11 @@ body {
 /* ******************** Social ******************** */
 md-tooltip.md-content { background-color: #000000; }
 .section-social { padding: 48px 0; }
-.social-icons { margin-top: 24px; }
+.social-icons {
+    margin-top: 24px;
+    margin-left: 32px;
+    margin-right: 32px;
+}
 .btn-social { margin-top: -2px !important; }
 #mc-embedded-subscribe { background-color: #333333 !important; }
 #mc-embedded-subscribe:focus, #mc-embedded-subscribe:hover { background-color: #555555 !important; }
@@ -102,7 +106,12 @@ md-tooltip.md-content { background-color: #000000; }
 
 /* ******************** Mobile ******************** */
 @media (max-width: 960px) {
-    .app-info { padding: 12px 48px 24px 48px; }
+    .app-info { padding: 12px 24px 24px 24px; }
     .app-name { font-size: 36px; }
     .app-icon { width: 128px !important; }
+    .google-badge, .amazon-badge {
+        width: 192px;
+        height: auto;
+        margin: 8px 16px;
+    }
 }

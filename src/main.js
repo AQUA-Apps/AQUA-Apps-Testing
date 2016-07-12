@@ -11,12 +11,10 @@ angular.module('AQUA Apps', ['ngMaterial', 'ngSanitize', 'apps'])
 }).controller('SiteCtrl', function($scope, $mdDialog, $mdMedia) {
     globalScope = $scope;
     $scope.showLegal = function(isPrivacy) {
-        var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
         $mdDialog.show({
             templateUrl: './res/legal/' + (isPrivacy ? 'privacy' : 'tos') + '.html',
-            openFrom: angular.element(isPrivacy ? btnPrivacy : btnTerms), closeTo: angular.element(isPrivacy ? btnPrivacy : btnTerms), parent: angular.element(document.body), clickOutsideToClose: true, fullscreen: useFullScreen, controller: DialogController
+            openFrom: angular.element(isPrivacy ? btnPrivacy : btnTerms), closeTo: angular.element(isPrivacy ? btnPrivacy : btnTerms), parent: angular.element(document.body), clickOutsideToClose: true, controller: DialogController
         });
-        $scope.$watch(function() { return $mdMedia('xs') || $mdMedia('sm'); }, function(wantsFullScreen) { $scope.customFullscreen = (wantsFullScreen === true); });
     };
 });
 
