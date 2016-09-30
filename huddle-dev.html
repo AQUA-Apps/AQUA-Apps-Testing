@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>AQUA Apps | 404</title>
+        <title>AQUA Apps | HUDdle API</title>
 
         <!-- Meta -->
         <meta charset="utf-8">
@@ -18,35 +18,55 @@
 
         <!-- Themes -->
         <link rel="stylesheet" href="styles/styles.css">
+        <link rel="stylesheet" href="styles/huddle-api.css">
 
         <!-- Angular Material -->
         <link rel="stylesheet" href="src/libs/angular-material.min.css">
 
         <!-- MailChimp -->
         <link rel="stylesheet" href="src/libs/mailchimp-horizontal-slim-10_7.css">
+
+        <!-- Code Highlighting -->
+        <link rel="stylesheet" href="src/libs/prism.css">
     </head>
 
-    <body class="nodrag" ng-app="AQUA Apps" ng-cloak>
+    <body ng-app="AQUA Apps" ng-cloak>
         <!-- ******************** Navigation ******************** -->
-        <md-toolbar id="toolbar" class="toolbar" layout="row" style="position: fixed;">
+        <md-toolbar id="toolbar" class="nodrag toolbar" layout="row" style="position: fixed;">
             <div class="md-toolbar-tools">
                 <a class="nodrag" href="http://aquaapps.co"><md-icon class="toolbar-logo" md-svg-icon="images/vector/ic-aquaapps.svg"></md-icon></a>
                 <h2><a class="toolbar-name nodrag" href="http://aquaapps.co">AQUA Apps</a></h2>
             </div>
         </md-toolbar>
 
-        <div class="promo-section" layout="column" layout-align="center center">
-            <div>
-                <img class="promo-logo nodrag" src="images/logo-aquaapps.png" />
-            </div>
-            <h1 style="text-align:center;">Sorry - this page doesn't exist or is currently unavailable.</h1>
-            <div class="dev-btns" layout="row">
-                <md-button class="md-raised dev-btn nodrag" href="http://aquaapps.co">Take Me Home</md-button>
-            </div>
+        <div class="nodrag api-intro-section" layout="column" layout-align="center center">
+            <h1 class="api-text-center">HUDdle API</h1>
+            <h3 class="api-text-center">Are you a developer of a navigation app?</h3>
+            <h3 class="api-text-center">Use the HUDdle API to allow your users to access a head-up display</h3>
+            <p class="api-text-center">Email <a href="mailto:support@aquaapps.co">support@aquaapps.co</a> to add your app to our "Suported Apps" list</p>
+            <md-button class="md-raised dev-btn nodrag" href="res/HuddleApi.zip" target="_blank" download="HuddleApi.zip">Download Huddle API (45 KB)</md-button>
+            <h2 class="api-text-center">Example</h2>
+        </div>
+
+        <div class="api-documentation-section">
+            <pre><code class="language-java">
+                Intent huddleIntent = new Intent(HuddleApi.HUDDLE_API);
+                huddleIntent.putStringExtra(HuddleApi.KEY_ETA_TIME, "8:52"); // Always use 12 hour time
+                huddleIntent.putStringExtra(HuddleApi.KEY_ETA_AMPM, "pm"); // "am" or "pm"
+                huddleIntent.putLongExtra(HuddleApi.KEY_DISTANCE, 80); // Always in metres
+                huddleIntent.putLongExtra(HuddleApi.KEY_REMAINING_DISTANCE, 1000); // Always in metres
+                huddleIntent.putLongExtra(HuddleApi.KEY_REMAINING_TIME, 60); // Always in seconds
+                huddleIntent.putIntExtra(HuddleApi.KEY_ICON, HuddleApi.DIRECTION_ROUNDABOUT_6_FLIPPED);
+                sendBroadcast(huddleIntent);
+            </code></pre>
+        </div>
+
+        <div class="nodrag api-sample-hud" layout="column" layout-align="center center">
+            <img src="images/huddle-api/sample.jpg" />
         </div>
 
         <!-- ******************** Footer ******************** -->
-        <footer class="footer" ng-controller="SiteCtrl">
+        <footer class="nodrag footer" ng-controller="SiteCtrl">
             <div style="text-align: center;">
                 <div class="copyright" layout="row" layout-align="center center">Copyright &copy; 2012-2016, AQUA Apps. All rights reserved.</div>
                 <div class="copyright legal-trademarks" layout="row" layout-align="center center">Android, Google Play, and the Google Play logo are trademarks of Google Inc.</div>
@@ -64,6 +84,9 @@
         <script src="src/libs/angularjs-1.5.3-angular-messages.min.js"></script>
         <script src="src/libs/angular-sanitize-1.4.12.js"></script>
         <script src="src/libs/angularmaterial-1.1.0-rc2-angular-material.min.js"></script>
+
+        <!-- Code Highlighting -->
+        <script src="src/libs/prism.min.js"></script>
 
         <!-- Javascript -->
         <script src="src/apps/Apps.js"></script>

@@ -51,14 +51,14 @@
         <md-list class="no-margin no-padding" ng-controller="AppController as ac" ng-cloak>
             <md-list-item ng-repeat="a in ac.apps" ng-style="{ 'background-color':a.colorDark }">
                 <div class="app-info full-width" layout="column" layout-align="center center">
-                    <h1 class="app-name">{{ a.name }}</h1>
+                    <h1 class="app-name" ng-bind-html="a.name"></h1>
                     <md-icon class="app-icon" md-svg-icon="images/vector/{{ a.icon }}.svg"></md-icon>
                     <div>
                         <div class="app-desc" ng-bind-html="a.fullDescription"></div>
                         <span class="app-legal" ng-bind-html="a.legal"></span>
                     </div>
                     <div class="dev-btns" layout="row" layout-xs="column" layout-sm="column" layout-align="center center">
-                        <a class="nodrag" href="{{ a.google }}" ng-hide="a.google == ''" target="_blank"><img class="nodrag google-badge" alt="Get it on Google Play" src="images/badge-google.png" /></a>
+                        <a class="nodrag" href="{{ a.google }}&referrer=aquaapps" ng-hide="a.google == ''" target="_blank"><img class="nodrag google-badge" alt="Get it on Google Play" src="images/badge-google.png" /></a>
                         <a class="nodrag" href="{{ a.amazon }}" ng-hide="a.amazon == ''" target="_blank"><img class="nodrag amazon-badge" alt="Available at Amazon" src="images/badge-amazon.png" /></a>
                     </div>
                 </div>
@@ -126,6 +126,7 @@
             </div>
         </footer>
 
+        <!-- Angular Material -->
         <script src="src/libs/angularjs-1.5.3-angular.min.js"></script>
         <script src="src/libs/angularjs-1.5.3-angular-animate.min.js"></script>
         <script src="src/libs/angularjs-1.5.3-angular-aria.min.js"></script>
